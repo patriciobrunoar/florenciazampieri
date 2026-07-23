@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investigadora — Florencia Zampieri</title>
+  <meta name="description" content="The Blue Senses: la investigación de Florencia Zampieri sobre neuroarquitectura, psicología ambiental y teoría de los sentidos." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Meddon&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+<body>
+
+  <div class="draft-banner">Versión preliminar — no es el sitio en vivo. El contenido es un borrador de trabajo.</div>
+
+  <nav class="site-nav">
+    <div class="wrap">
+      <a class="nav-logo" href="index2-es.html">Florencia&nbsp;Zampieri</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index2-es.html">Inicio</a></li>
+        <li><a href="blue-maker-es.html">The Blue Maker</a></li>
+        <li><a href="speaker-es.html">Conferencista</a></li>
+        <li><a href="researcher-es.html" class="active">Investigadora</a></li>
+        <li><a href="about-es.html">Sobre Florencia</a></li>
+        <li><a href="contact-es.html">Contacto</a></li>
+        <li class="lang-switch-item"><a href="researcher.html" class="lang-link">EN</a><span aria-hidden="true">/</span><a href="researcher-es.html" class="lang-link active">ES</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="researcher" class="section-pad">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <p class="eyebrow">Investigación</p>
+          <h2 class="section-title">The Blue Senses</h2>
+          <div class="divider"></div>
+          <p class="lede">Blue Senses es la línea de investigación de Florencia que vincula la teoría antroposófica de los sentidos, la neurociencia y la psicología ambiental con su práctica de estudio &mdash; habitar el sentido, y visibilizar lo que parece invisible.</p>
+          <p class="lede">Su especialización académica en Neuroarquitectura, Neurociencia Cognitiva y Psicología Ambiental (INESEM, Granada, 2023&ndash;24) se suma a una certificación en Customer Experience Management (FIU, Florida International University, 2016&ndash;17) y a tres décadas de investigación aplicada en la FADU&#8209;UBA.</p>
+        </div>
+        <div class="split-media reveal">
+          <img src="assets/site/underwater-2.jpg" alt="Luz filtrándose a través del agua, vista submarina" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top: 4rem;">
+        <p class="eyebrow">Publicaciones y Congresos Seleccionados</p>
+        <ul class="pub-list">
+          <li><b>La Construcci&oacute;n de la idea de Belleza, Imagen y la Pr&aacute;ctica social de Consumir.</b> Presentado en el Congreso Iberoamericano ALTEHA, Facultad de Arquitectura, UBA &mdash; Montevideo, Uruguay, 2013.</li>
+          <li><b>Espacio y Tiempo en la Teor&iacute;a del Habitat.</b> La belleza y la pr&aacute;ctica social de Consumir. Congreso PRE ALTEHA, FADU&#8209;UBA, 2011.</li>
+          <li><b>Habitar el dise&ntilde;o. Usos y costumbres en el siglo XXI.</b> Jornadas de Investigaci&oacute;n, Secretar&iacute;a de Investigaci&oacute;n, FADU&#8209;UBA, 2006.</li>
+          <li><b>La vivienda de los &rsquo;90 en Buenos Aires a trav&eacute;s del discurso acad&eacute;mico y popular.</b> 2do Premio, &Aacute;rea Tem&aacute;tica Historia y Cr&iacute;tica, Secretar&iacute;a de Investigaci&oacute;n, FADU&#8209;UBA, 2004.</li>
+        </ul>
+      </div>
+
+      <div class="credential-strip reveal">
+        <span>Matrícula CPAU N.º 22175</span>
+        <span>FADU &middot; UBA, 1992&ndash;1999</span>
+        <span>Profesora Titular desde 1996</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-logo">Florencia&nbsp;Zampieri</div>
+      <ul class="footer-links">
+        <li><a href="index2-es.html">Inicio</a></li>
+        <li><a href="blue-maker-es.html">The Blue Maker</a></li>
+        <li><a href="speaker-es.html">Conferencista</a></li>
+        <li><a href="researcher-es.html">Investigadora</a></li>
+        <li><a href="about-es.html">Sobre Florencia</a></li>
+        <li><a href="contact-es.html">Contacto</a></li>
+      </ul>
+      <p class="copyright">&copy; <span id="year"></span> Florencia Zampieri</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>

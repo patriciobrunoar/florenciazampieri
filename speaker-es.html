@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conferencista — Florencia Zampieri</title>
+  <meta name="description" content="Charlas y talleres sobre neuroarquitectura, color y bienestar sensorial, por Florencia Zampieri." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Meddon&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+<body>
+
+  <div class="draft-banner">Versión preliminar — no es el sitio en vivo. El contenido es un borrador de trabajo.</div>
+
+  <nav class="site-nav">
+    <div class="wrap">
+      <a class="nav-logo" href="index2-es.html">Florencia&nbsp;Zampieri</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index2-es.html">Inicio</a></li>
+        <li><a href="blue-maker-es.html">The Blue Maker</a></li>
+        <li><a href="speaker-es.html" class="active">Conferencista</a></li>
+        <li><a href="researcher-es.html">Investigadora</a></li>
+        <li><a href="about-es.html">Sobre Florencia</a></li>
+        <li><a href="contact-es.html">Contacto</a></li>
+        <li class="lang-switch-item"><a href="speaker.html" class="lang-link">EN</a><span aria-hidden="true">/</span><a href="speaker-es.html" class="lang-link active">ES</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="speaker" class="section-pad">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Charlas y Facilitación</p>
+        <h2 class="section-title">Ideas que transforman la sala</h2>
+        <div class="divider"></div>
+        <p class="lede">Desde hace casi tres décadas, Florencia enseña, capacita y facilita &mdash; traduciendo la investigación sobre color, percepción sensorial y neuroarquitectura en charlas y talleres para escuelas de diseño, instituciones culturales y equipos corporativos.</p>
+      </div>
+
+      <ul class="topic-list reveal">
+        <li>
+          <span class="tag">Conferencia</span>
+          <div>
+            <h3>Neuroarquitectura y Bienestar</h3>
+            <p>Cómo el entorno construido moldea la cognición, la emoción y la salud a largo plazo &mdash; y qué implica esto para los espacios que diseñamos y habitamos.</p>
+          </div>
+        </li>
+        <li>
+          <span class="tag">Charla</span>
+          <div>
+            <h3>Blue Mind: color, agua y la psicología de la calma</h3>
+            <p>La ciencia y el arte detrás de por qué la cercanía al azul y al agua restaura el foco, a partir de la investigación y la práctica propias de Florencia en Blue Life.</p>
+          </div>
+        </li>
+        <li>
+          <span class="tag">Taller</span>
+          <div>
+            <h3>Facilitación en LEGO&reg; Serious Play&reg;</h3>
+            <p>Facilitadora certificada (Rasmussen Consulting, Dinamarca, 2018), guía a los equipos en procesos de resolución estratégica y creativa a través del juego.</p>
+          </div>
+        </li>
+        <li>
+          <span class="tag">Taller</span>
+          <div>
+            <h3>Planificación del color y experiencia sensorial en retail</h3>
+            <p>Formación en styling de color para locales y visual merchandising, dirigida a profesionales del diseño y el retail.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="credential-strip reveal">
+        <span>FADU &middot; Universidad de Buenos Aires</span>
+        <span>Universidad de Palermo</span>
+        <span>Rasmussen Consulting &mdash; Dinamarca</span>
+        <span>Euro Innova Formaci&oacute;n &mdash; Granada</span>
+        <span>COE &mdash; Consultora de Imagen</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-logo">Florencia&nbsp;Zampieri</div>
+      <ul class="footer-links">
+        <li><a href="index2-es.html">Inicio</a></li>
+        <li><a href="blue-maker-es.html">The Blue Maker</a></li>
+        <li><a href="speaker-es.html">Conferencista</a></li>
+        <li><a href="researcher-es.html">Investigadora</a></li>
+        <li><a href="about-es.html">Sobre Florencia</a></li>
+        <li><a href="contact-es.html">Contacto</a></li>
+      </ul>
+      <p class="copyright">&copy; <span id="year"></span> Florencia Zampieri</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>

@@ -124,6 +124,26 @@ a {
   border-bottom-color: var(--blue-300);
 }
 
+.lang-switch-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lang-switch-item span {
+  color: var(--hairline);
+  font-size: 0.6875rem;
+}
+
+.lang-switch-item a.lang-link {
+  color: var(--blue-300);
+}
+
+.lang-switch-item a.lang-link.active {
+  color: var(--sand-100);
+  border-bottom-color: var(--blue-300);
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -154,13 +174,23 @@ a {
   }
 
   .nav-links.open {
-    max-height: 24rem;
+    max-height: 28rem;
   }
 
   .nav-links a {
     display: block;
     padding: 1rem 2rem;
     border-bottom: 1px solid var(--hairline);
+  }
+
+  .lang-switch-item {
+    padding: 1rem 2rem;
+  }
+
+  .lang-switch-item a {
+    display: inline;
+    padding: 0;
+    border-bottom: none;
   }
 }
 

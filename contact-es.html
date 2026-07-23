@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Florencia Zampieri</title>
+  <meta name="description" content="Contáctese con Florencia Zampieri para charlas, encargos, prensa o colaboraciones." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Meddon&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+<body>
+
+  <div class="draft-banner">Versión preliminar — no es el sitio en vivo. El contenido es un borrador de trabajo.</div>
+
+  <nav class="site-nav">
+    <div class="wrap">
+      <a class="nav-logo" href="index2-es.html">Florencia&nbsp;Zampieri</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index2-es.html">Inicio</a></li>
+        <li><a href="blue-maker-es.html">The Blue Maker</a></li>
+        <li><a href="speaker-es.html">Conferencista</a></li>
+        <li><a href="researcher-es.html">Investigadora</a></li>
+        <li><a href="about-es.html">Sobre Florencia</a></li>
+        <li><a href="contact-es.html" class="active">Contacto</a></li>
+        <li class="lang-switch-item"><a href="contact.html" class="lang-link">EN</a><span aria-hidden="true">/</span><a href="contact-es.html" class="lang-link active">ES</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="contact" class="section-pad">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Contacto</p>
+        <h2 class="section-title">Hablemos</h2>
+        <div class="divider"></div>
+        <p class="lede">Para charlas, encargos, prensa o colaboraciones, puede escribir directamente o dejar un mensaje a continuación.</p>
+      </div>
+
+      <div class="contact-grid">
+        <ul class="contact-list reveal">
+          <li><span class="label">Correo electrónico</span> <a href="mailto:info@florenciazampieri.ar">info@florenciazampieri.ar</a></li>
+          <li><span class="label">Estudio</span> <span>Buenos Aires, Argentina</span></li>
+          <li><span class="label">Sitio web</span> <a href="https://florenciazampieri.com.ar" target="_blank" rel="noopener">florenciazampieri.com.ar</a></li>
+          <li><span class="label">Instagram</span> <a href="https://www.instagram.com/florenciazampieri" target="_blank" rel="noopener">@florenciazampieri</a></li>
+        </ul>
+
+        <form class="contact-form reveal" action="mailto:info@florenciazampieri.ar" method="post" enctype="text/plain">
+          <div>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="btn" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-logo">Florencia&nbsp;Zampieri</div>
+      <ul class="footer-links">
+        <li><a href="index2-es.html">Inicio</a></li>
+        <li><a href="blue-maker-es.html">The Blue Maker</a></li>
+        <li><a href="speaker-es.html">Conferencista</a></li>
+        <li><a href="researcher-es.html">Investigadora</a></li>
+        <li><a href="about-es.html">Sobre Florencia</a></li>
+        <li><a href="contact-es.html">Contacto</a></li>
+      </ul>
+      <p class="copyright">&copy; <span id="year"></span> Florencia Zampieri</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>

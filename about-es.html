@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Florencia — Florencia Zampieri</title>
+  <meta name="description" content="Arquitecta, artista y docente desde 1996. Sobre Florencia Zampieri." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Meddon&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+<body>
+
+  <div class="draft-banner">Versión preliminar — no es el sitio en vivo. El contenido es un borrador de trabajo.</div>
+
+  <nav class="site-nav">
+    <div class="wrap">
+      <a class="nav-logo" href="index2-es.html">Florencia&nbsp;Zampieri</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index2-es.html">Inicio</a></li>
+        <li><a href="blue-maker-es.html">The Blue Maker</a></li>
+        <li><a href="speaker-es.html">Conferencista</a></li>
+        <li><a href="researcher-es.html">Investigadora</a></li>
+        <li><a href="about-es.html" class="active">Sobre Florencia</a></li>
+        <li><a href="contact-es.html">Contacto</a></li>
+        <li class="lang-switch-item"><a href="about.html" class="lang-link">EN</a><span aria-hidden="true">/</span><a href="about-es.html" class="lang-link active">ES</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="about" class="section-pad">
+    <div class="wrap">
+      <div class="split">
+        <div class="about-media reveal">
+          <img class="tall" src="assets/site/about-portrait.jpg" alt="Florencia Zampieri outdoors, portrait" loading="lazy" />
+          <img class="short" src="assets/site/headshot.jpg" alt="Florencia Zampieri, close portrait" loading="lazy" />
+          <img class="short" src="assets/site/beach-portrait-2.jpg" alt="Dusk beach, Blue Life inspiration" loading="lazy" />
+        </div>
+        <div class="reveal">
+          <p class="eyebrow on-dark">Acerca de</p>
+          <h2 class="section-title on-dark">Florencia Zampieri</h2>
+          <div class="divider"></div>
+          <p class="lede">Soy una artista que transforma espacios, una arquitecta que se inspira a través del movimiento, una bailarina que dibuja, liviana, en el aire, cuando se eleva. El lienzo es un pentagrama, que me permite escuchar, percibir y conectar con otros lienzos, otras emociones. El arte en mí es inevitable &mdash; es magia que materializa la esencia humana, la alquimia transformadora del cuerpo, el espíritu y el alma.</p>
+          <p class="lede">La estructura fue mi punto de partida, mi eje de equilibrio para bailar y componer. Me inspiro en lugares que recorro, ciudades cercanas al agua; me inspira la belleza de la calma, la naturaleza de lo simple, las texturas y sus profundidades. No encuentro límites entre mis percepciones &mdash; creo que se entrelazan entre ellas y permiten la fluidez que necesito para crear.</p>
+          <div class="about-stats">
+            <div>
+              <div class="num">1996</div>
+              <div class="label">Docencia y Práctica desde</div>
+            </div>
+            <div>
+              <div class="num">22175</div>
+              <div class="label">Matrícula CPAU N.º</div>
+            </div>
+            <div>
+              <div class="num">12+</div>
+              <div class="label">Exposiciones, Premios y Membresías</div>
+            </div>
+          </div>
+          <div class="memberships">
+            <span>DARA &mdash; Dise&ntilde;adores de Interiores Argentinos</span>
+            <span>GAC &mdash; Grupo Argentino del Color</span>
+            <span>Sociedad Argentina de Medicina del Estr&eacute;s</span>
+            <span>CPAU &mdash; Arquitecta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-logo">Florencia&nbsp;Zampieri</div>
+      <ul class="footer-links">
+        <li><a href="index2-es.html">Inicio</a></li>
+        <li><a href="blue-maker-es.html">The Blue Maker</a></li>
+        <li><a href="speaker-es.html">Conferencista</a></li>
+        <li><a href="researcher-es.html">Investigadora</a></li>
+        <li><a href="about-es.html">Sobre Florencia</a></li>
+        <li><a href="contact-es.html">Contacto</a></li>
+      </ul>
+      <p class="copyright">&copy; <span id="year"></span> Florencia Zampieri</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>
