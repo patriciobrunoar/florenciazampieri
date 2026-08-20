@@ -34,6 +34,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -424,7 +425,7 @@ h2.section-title.on-dark {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: start;
 }
 
 @media (max-width: 860px) {
@@ -625,6 +626,9 @@ h2.section-title.on-dark {
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
   color: var(--blue-700);
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .pub-list {
@@ -714,6 +718,9 @@ h2.section-title.on-dark {
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
   color: var(--blue-200);
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 /* ---------- Contact ---------- */
