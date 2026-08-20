@@ -453,14 +453,14 @@ h2.section-title.on-dark {
 
 .pillars {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   margin-top: 3rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 640px) {
   .pillars {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
