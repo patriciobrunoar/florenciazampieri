@@ -447,7 +447,11 @@ h2.section-title.on-dark {
 }
 
 /* ---------- The Blue Maker ---------- */
-#blue-maker {
+#blue-maker,
+#ecosystem,
+#application,
+#hlus,
+#project {
   background: var(--blue-950);
   color: var(--sand-100);
 }
@@ -466,14 +470,14 @@ h2.section-title.on-dark {
 }
 
 .pillar {
-  border: 1px solid var(--hairline);
+  border: 1px solid var(--hairline-dark);
   padding: 1.75rem 1.5rem;
 }
 
 .pillar .script-accent {
   display: block;
   font-size: 1.75rem;
-  color: var(--blue-300);
+  color: var(--blue-500);
   margin-bottom: 0.5rem;
 }
 
@@ -481,6 +485,18 @@ h2.section-title.on-dark {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.6;
+  color: #3a4b5c;
+}
+
+.pillars.on-dark .pillar {
+  border-color: var(--hairline);
+}
+
+.pillars.on-dark .pillar .script-accent {
+  color: var(--blue-300);
+}
+
+.pillars.on-dark .pillar p {
   color: var(--blue-200);
 }
 
@@ -529,7 +545,7 @@ h2.section-title.on-dark {
 .testimonial {
   margin-top: 4rem;
   padding: 2.5rem;
-  border-left: 2px solid var(--blue-300);
+  border-left: 2px solid var(--blue-500);
 }
 
 .testimonial blockquote {
@@ -538,7 +554,7 @@ h2.section-title.on-dark {
   font-style: italic;
   font-size: clamp(1.125rem, 2vw, 1.5rem);
   line-height: 1.5;
-  color: var(--sand-100);
+  color: var(--blue-950);
 }
 
 .testimonial cite {
@@ -546,6 +562,18 @@ h2.section-title.on-dark {
   font-size: 0.75rem;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+  color: var(--blue-700);
+}
+
+.testimonial.on-dark {
+  border-left-color: var(--blue-300);
+}
+
+.testimonial.on-dark blockquote {
+  color: var(--sand-100);
+}
+
+.testimonial.on-dark cite {
   color: var(--blue-300);
 }
 
@@ -660,6 +688,15 @@ h2.section-title.on-dark {
   color: var(--blue-950);
 }
 
+.pub-list.on-dark li {
+  border-top-color: var(--hairline);
+  color: var(--blue-200);
+}
+
+.pub-list.on-dark li b {
+  color: var(--sand-100);
+}
+
 /* ---------- About ---------- */
 #about {
   background: var(--blue-950);
@@ -723,15 +760,20 @@ h2.section-title.on-dark {
 }
 
 .memberships span {
-  border: 1px solid var(--hairline);
+  border: 1px solid var(--hairline-dark);
   padding: 0.4rem 0.9rem;
   font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
-  color: var(--blue-200);
+  color: var(--blue-700);
   min-width: 0;
   max-width: 100%;
   overflow-wrap: break-word;
+}
+
+.memberships.on-dark span {
+  border-color: var(--hairline);
+  color: var(--blue-200);
 }
 
 /* ---------- Contact ---------- */
