@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nodos Calmos — Florencia Zampieri</title>
+  <meta name="description" content="Nodos Calmos® — A Network of Restorative Spaces by Florencia Zampieri / The Blue Maker." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Meddon&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+<body>
+
+  <div class="draft-banner">Preview build — not the live site. Content is a working draft.</div>
+
+  <nav class="site-nav">
+    <div class="wrap">
+      <a class="nav-logo" href="index2.html">Florencia&nbsp;Zampieri</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index2.html">Home</a></li>
+        <li><a href="blue-maker.html">The Blue Maker</a></li>
+        <li><a href="blue-mind-lifestyle.html">Blue Mind Life Style</a></li>
+        <li><a href="speaker.html">Speaker</a></li>
+        <li><a href="researcher.html">Researcher</a></li>
+        <li><a href="about.html">About Florencia</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="lang-switch-item"><a href="nodos-calmos.html" class="lang-link active">EN</a><span aria-hidden="true">/</span><a href="nodos-calmos-es.html" class="lang-link">ES</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="blue-maker" class="section-pad">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <p class="eyebrow on-dark"><a href="blue-maker.html" style="color:inherit;">The Blue Maker</a> &rarr; Signature Framework</p>
+          <h2 class="section-title on-dark">Nodos Calmos&reg;</h2>
+          <div class="divider"></div>
+          <p class="lede">Points that regulate stress and attention.</p>
+          <p class="lede">A network of restorative spaces that favour emotional regulation, reduce stress and improve everyday experience.</p>
+          <p class="lede">Spaces that regulate your mind, calm your body and transform your life. Blue Mind. Better Life.</p>
+          <p class="lede">The power of blue for clarity, calm and focus &mdash; real wellbeing, spaces that generate measurable change in your life.</p>
+          <p class="lede"><em>We design states. Not spaces.</em></p>
+        </div>
+        <div class="split-media reveal">
+          <img src="assets/site/nodos-calmos-room.jpg" alt="Nodos Calmos &mdash; a restorative blue room" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-logo">Florencia&nbsp;Zampieri</div>
+      <ul class="footer-links">
+        <li><a href="index2.html">Home</a></li>
+        <li><a href="blue-maker.html">The Blue Maker</a></li>
+        <li><a href="blue-mind-lifestyle.html">Blue Mind Life Style</a></li>
+        <li><a href="speaker.html">Speaker</a></li>
+        <li><a href="researcher.html">Researcher</a></li>
+        <li><a href="about.html">About Florencia</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="copyright">&copy; <span id="year"></span> Florencia Zampieri</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>

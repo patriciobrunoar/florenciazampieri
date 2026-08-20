@@ -612,6 +612,17 @@ h2.section-title.on-dark {
   color: #3a4b5c;
 }
 
+.topic-list p a {
+  color: var(--blue-500);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-standard);
+}
+
+.topic-list p a:hover {
+  border-bottom-color: var(--blue-500);
+}
+
 .credential-strip {
   margin-top: 4rem;
   padding-top: 3rem;
