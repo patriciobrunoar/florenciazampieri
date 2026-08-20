@@ -531,6 +531,14 @@ h2.section-title.on-dark {
   transform: scale(1.06);
 }
 
+.gallery figure a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
 .gallery figcaption {
   position: absolute;
   inset: auto 0 0 0;
