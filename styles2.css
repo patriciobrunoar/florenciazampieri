@@ -946,3 +946,180 @@ h2.section-title.on-dark {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ---------- The Artist ---------- */
+#artist {
+  background: var(--blue-950);
+  color: var(--sand-100);
+}
+
+#recognition,
+#senses {
+  background: #eef4f7;
+}
+
+.artworks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+  margin-top: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .artworks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .artworks {
+    grid-template-columns: 1fr;
+  }
+}
+
+.artworks figure {
+  margin: 0;
+}
+
+.artworks img {
+  width: 100%;
+  height: auto;
+}
+
+.artworks figcaption {
+  margin-top: 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  line-height: 1.7;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--blue-700);
+}
+
+.artworks figcaption .title {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--blue-950);
+  margin-bottom: 0.35rem;
+}
+
+.artworks.on-dark figcaption {
+  color: var(--blue-300);
+}
+
+.artworks.on-dark figcaption .title {
+  color: var(--sand-100);
+}
+
+/* ---------- Academic & Consultory ---------- */
+#academic {
+  background: #eef4f7;
+}
+
+#consultory {
+  background: var(--blue-950);
+  color: var(--sand-100);
+}
+
+#media {
+  background: var(--sand-100);
+}
+
+/* ---------- Legibility inside dark sections ----------
+   Dark sections set a light body colour, but .lede, .divider and the
+   list components carry their own dark-on-light colours, which left
+   body copy at ~1.5:1 contrast on the navy background. */
+#blue-maker .lede,
+#ecosystem .lede,
+#application .lede,
+#hlus .lede,
+#project .lede,
+#about .lede,
+#artist .lede,
+#consultory .lede {
+  color: var(--blue-200);
+}
+
+#blue-maker .divider,
+#ecosystem .divider,
+#application .divider,
+#hlus .divider,
+#project .divider,
+#about .divider,
+#artist .divider,
+#consultory .divider {
+  background: var(--hairline);
+}
+
+#blue-maker .pub-list li,
+#ecosystem .pub-list li,
+#application .pub-list li,
+#hlus .pub-list li,
+#project .pub-list li,
+#about .pub-list li,
+#artist .pub-list li,
+#consultory .pub-list li {
+  border-top-color: var(--hairline);
+  color: var(--blue-200);
+}
+
+#blue-maker .pub-list li b,
+#ecosystem .pub-list li b,
+#application .pub-list li b,
+#hlus .pub-list li b,
+#project .pub-list li b,
+#about .pub-list li b,
+#artist .pub-list li b,
+#consultory .pub-list li b {
+  color: var(--sand-100);
+}
+
+#blue-maker .topic-list li,
+#ecosystem .topic-list li,
+#application .topic-list li,
+#hlus .topic-list li,
+#project .topic-list li,
+#about .topic-list li,
+#artist .topic-list li,
+#consultory .topic-list li {
+  border-top-color: var(--hairline);
+}
+
+#blue-maker .topic-list h3,
+#ecosystem .topic-list h3,
+#application .topic-list h3,
+#hlus .topic-list h3,
+#project .topic-list h3,
+#about .topic-list h3,
+#artist .topic-list h3,
+#consultory .topic-list h3 {
+  color: var(--sand-100);
+}
+
+#blue-maker .topic-list p,
+#ecosystem .topic-list p,
+#application .topic-list p,
+#hlus .topic-list p,
+#project .topic-list p,
+#about .topic-list p,
+#artist .topic-list p,
+#consultory .topic-list p {
+  color: var(--blue-200);
+}
+
+#blue-maker .artworks figcaption,
+#project .artworks figcaption,
+#artist .artworks figcaption {
+  color: var(--blue-300);
+}
+
+#blue-maker .artworks figcaption .title,
+#project .artworks figcaption .title,
+#artist .artworks figcaption .title {
+  color: var(--sand-100);
+}
