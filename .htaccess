@@ -1,0 +1,6 @@
+DirectoryIndex index.html
+
+# Old preview URLs -> new home pages
+RewriteEngine On
+RewriteRule ^index2\.html$ /index.html [R=301,L]
+RewriteRule ^index2-es\.html$ /index-es.html [R=301,L]
